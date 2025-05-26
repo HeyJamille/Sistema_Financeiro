@@ -27,6 +27,8 @@
               }
             ],
             "styles": [
+              "src/styles.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "src/styles.css"
             ],
             "scripts": [],
@@ -97,5 +99,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "0301437b-43d3-4456-8a1e-80885ae9ebb7"
   }
 }

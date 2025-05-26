@@ -1,0 +1,53 @@
+<div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 via-white to-blue-50 px-4">
+  <div class="w-full max-w-md md:bg-white/80 backdrop-blur-md rounded-3xl md:shadow-2xl px-8 py-12">
+
+    <!-- Título -->
+    <div class="mb-10 text-center">
+      <h2 class="text-4xl font-extrabold text-gray-900">Bem-vindo de volta</h2>
+      <p class="text-gray-500 text-sm mt-2">Acesse sua conta para continuar</p>
+    </div>
+
+    <!-- Formulário -->
+    <form (ngSubmit)="onLogin()" #form="ngForm" class="space-y-6">
+      
+      <!-- Email -->
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+        <input id="email" type="email" name="email" [(ngModel)]="email" required placeholder="Ex: seu@email.com"
+          class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none text-gray-800 shadow-sm placeholder-gray-400" />
+      </div>
+
+      <!-- Senha com botão de mostrar -->
+      <div>
+        <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Senha</label>
+        <div class="relative">
+          <input id="password" [type]="showPassword ? 'text' : 'password'" name="password" [(ngModel)]="password"
+            required placeholder="Digite sua senha"
+            class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none text-gray-800 shadow-sm placeholder-gray-400" />
+          <button type="button" (click)="togglePassword()"
+            class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-blue-500 transition"
+            aria-label="Mostrar senha">
+            <i [class]="showPassword ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mensagem de erro -->
+      <p *ngIf="message" class="text-sm text-red-600 font-medium">
+        {{ message }}
+      </p>
+
+      <!-- Botão de login -->
+      <button type="submit"
+        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl shadow-md transition duration-200">
+        Entrar
+      </button>
+    </form>
+
+    <!-- Link de cadastro -->
+    <div class="mt-6 text-center text-sm text-gray-600">
+      Ainda não tem conta?
+      <a href="./cadastro" class="text-blue-600 hover:underline font-medium">Crie uma agora</a>
+    </div>
+  </div>
+</div>
